@@ -24,3 +24,14 @@ def ids_of_players(player_filename, base_filename):
 	writer.writeheader()
 	for line in reader:
 		writer.writerow(line)
+
+def get_player_ids(base_filename):
+    filename = base_filename + 'player_ids_list.csv'
+    fopen = open(filename, 'r+', encoding='utf-8')
+    reader = csv.DictReader(fopen)
+    player_ids = {}
+    for line in reader:
+        k = int(line['id'])
+        v = line['first_name'] + '_' + line['second_name']
+        player_ids[k] = v
+    return player_ids

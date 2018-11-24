@@ -1,6 +1,5 @@
 import requests
 import json
-import time
 
 def get_data():
     response = requests.get("https://fantasy.premierleague.com/drf/bootstrap-static")
